@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  MDSpeedNews
+//
+//  Created by Medalands on 15/8/17.
+//  Copyright (c) 2015年 Medalands. All rights reserved.
+//
+
+#ifndef MDSpeedNews_PrefixHeader_pch
+#define MDSpeedNews_PrefixHeader_pch
+
+#define MDXFrom6(x) ([[UIScreen mainScreen] bounds].size.width / 375.0 * x)
+
+#define MDYFrom6(y) ([[UIScreen mainScreen] bounds].size.height / 667.0 * y)
+
+// 定义宏的面试题
+
+#define RGB_MD(r,g,b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1.0]
+
+#define RGBA_MD(r,g,b,a) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:a]
+
+#define IPhone4_5_6_6P(a,b,c,d) (CGSizeEqualToSize(CGSizeMake(320, 480), [[UIScreen mainScreen] bounds].size) ?(a) :(CGSizeEqualToSize(CGSizeMake(320, 568), [[UIScreen mainScreen] bounds].size) ? (b) : (CGSizeEqualToSize(CGSizeMake(375, 667), [[UIScreen mainScreen] bounds].size) ?(c) : (CGSizeEqualToSize(CGSizeMake(414, 736), [[UIScreen mainScreen] bounds].size) ?(d) : (a)))))
+
+
+#endif
+
+
+/*
+ //复习指南：
+ 1.MDSNNewsListView 
+    这个类里的 上拉 下拉 的功能
+ 2. MDSNScrollVIew 、MDCategoryView、MDShowDownView
+    (1).三个 View 各自封装的功能 和 他们 之间 联系
+    (2).MDSNMainViewController  在 三个View 之间的 作用
+ 
+ */
