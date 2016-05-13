@@ -48,14 +48,10 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
-    
     // Override point for customization after application launch.
     // 延长启动时间
 //    [NSThread sleepForTimeInterval:5.];
-    
-    
-    
+   
 /*
                                       ------- 推送  -----
                             后台服务器 -----》  APNS -----》 iPhone
@@ -69,25 +65,24 @@
 
     //设置 界面
     MDSetViewController *setVC = [[MDSetViewController alloc] init];
-    
     //给三方库 设置 右边的侧栏
     [MDYSliderViewController sharedSliderController].rightVC = setVC;
     
+    
+    
     MDSNMainViewController *mainVC = [[MDSNMainViewController alloc] init];
-    
     MDNavigationController *navigationVC = [[MDNavigationController alloc] initWithRootViewController:mainVC];
-    
     //给三方库 设置 主界面
     [MDYSliderViewController sharedSliderController].mainVC = navigationVC;
     //设置 三方库 为 根视图
-//    self.window.rootViewController = [MDYSliderViewController sharedSliderController];
+    
     
     // 保证 消息 界面 在所有的界面 上方
    _pushNavi= [[UINavigationController alloc] initWithRootViewController:[MDYSliderViewController sharedSliderController]];
     // 隐藏  导航栏
     [_pushNavi setNavigationBarHidden:YES];
     
-//    [navi pushViewController:<#(UIViewController *)#> animated:<#(BOOL)#>];
+
     
     self.window.rootViewController = _pushNavi;
     
@@ -113,17 +108,11 @@
 //    [_pushNavi pushViewController:<#(UIViewController *)#> animated:<#(BOOL)#>];
     
     
-    
-   
-
-    
     return YES;
     
-    
-    
-    
-    
 }
+
+
 
 -(void)loadAdView
 {

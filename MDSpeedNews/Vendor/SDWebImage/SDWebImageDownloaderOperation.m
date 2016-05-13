@@ -107,7 +107,9 @@
             CFRunLoopRunInMode(kCFRunLoopDefaultMode, 10, false);
         }
         else {
+            
             CFRunLoopRun();
+            
         }
 
         if (!self.isFinished) {

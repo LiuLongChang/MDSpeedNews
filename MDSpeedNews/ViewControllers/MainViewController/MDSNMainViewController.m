@@ -98,8 +98,9 @@
     [statusWindow addSubview:statusLabel];
     
     [statusWindow makeKeyAndVisible];
-    
 }
+
+
 #pragma mark View  相关
 -(void)initView
 {
@@ -181,7 +182,6 @@
     if (_showingCategoryArray.count > 0)
     {
         isReadedCache = YES;
-        
         return;
     }
     

@@ -210,31 +210,7 @@
 }
 
 - (void)updateRefreshDate :(NSDate *)date{
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = @"yyyy-MM-dd HH:mm";
-    NSString *dateString = [df stringFromDate:date];
-    NSString *title = NSLocalizedString(@"今天", nil);
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
-                                               fromDate:date toDate:[NSDate date] options:0];
-    NSInteger year = [components year];
-    NSInteger month = [components month];
-    NSInteger day = [components day];
-    if (year == 0 && month == 0 && day < 3) {
-        if (day == 0) {
-            title = NSLocalizedString(@"今天",nil);
-        } else if (day == 1) {
-            title = NSLocalizedString(@"昨天",nil);
-        } else if (day == 2) {
-            title = NSLocalizedString(@"前天",nil);
-        }
-        df.dateFormat = [NSString stringWithFormat:@"%@ HH:mm",title];
-        dateString = [df stringFromDate:date];
-        
-    }
-    _dateLabel.text = [NSString stringWithFormat:@"%@: %@",
-                       NSLocalizedString(@"最后更新", @""),
-                       dateString];
+    
     //    [df release];
 }
 

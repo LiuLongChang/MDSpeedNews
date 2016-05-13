@@ -74,7 +74,6 @@
 }
 
 
-
 + (MDYSliderViewController*)sharedSliderController
 {
     static MDYSliderViewController * sharedSVC;
